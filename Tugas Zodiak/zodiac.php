@@ -15,6 +15,10 @@ if($bulan == null || $tanggal == null){
     $zodiak = "Belum terisi";
 }
 
+else if($bulan <= 0 || $bulan >=13 || $tanggal <=0 || $tanggal >=32){
+    $zodiak = "Tanggal tidak Valid";
+}
+
 else{
 if ($bulan === 1) {
     if ($tanggal >= 1 && $tanggal <= 17) {
@@ -74,7 +78,7 @@ if ($bulan === 1) {
     if ($tanggal > 0 && $tanggal <= 26) {
         $zodiak = "Leo";
     } else if ($tanggal >= 26 && $tanggal < 31) {
-        $zodiak = "Hierapolis";
+        $zodiak = "Zeus";
     }
 } else if ($bulan === 11) {
     if ($tanggal > 0 && $tanggal <= 19) {
@@ -88,10 +92,7 @@ if ($bulan === 1) {
     } else if ($tanggal >= 21 && $tanggal < 31) {
         $zodiak = "Gemini";
     } 
-} else {
-    $zodiak = "Tanggal Anda tidak valid";
-}
-    }
+} }
 
 echo $zodiak;
 }

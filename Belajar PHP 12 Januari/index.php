@@ -41,10 +41,10 @@ function Kubus($s){
     $volume = $s * $s * $s;
     return $volume;
 }
-echo Persegi(12);
-echo Lingkaran(7);
-echo Segitiga(17, 10);
-echo Tabung(10, 10);
-echo Kubus(10);
+echo Persegi(12). "<br>";
+echo Lingkaran(7). "<br>";
+echo Segitiga(17, 10). "<br>";
+echo Tabung(10, 10) . "<br>";
+echo Kubus(10) . "<br>";
 ?>
 <p>belajar php</p>
