@@ -11,7 +11,7 @@ $tanggal = (int)$_POST["tanggal"] ;
 $bulan = (int)$_POST["bulan"] ;
 $zodiak = "";
 
-if($bulan == null || $tanggal == null){
+if ($bulan == null || $tanggal == null){
     $zodiak = "Belum terisi";
 }
 
