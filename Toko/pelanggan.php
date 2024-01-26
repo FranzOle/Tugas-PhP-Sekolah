@@ -1,40 +1,33 @@
+<form action="" method="post">
+    Nama:
+    <input type="text" name="namapelanggan" placeholder="Nama Pelanggan">
+<br>
+    Telepon:
+    <input type="number" name="telepon" placeholder="Telepon Pelanggan">
+<br>
+    Alamat:
+    <input type="text" name="alamat" placeholder="Alamat Pelanggan">
+<br>
+    <input type="submit" name="simpan" value="simpan">
+</form>
+
 <?php 
 $host = "127.0.0.1";
 $user = "root";
 $password = "";
 $db = "toko";
-
 $koneksi = new mysqli($host, $user, $password, $db);
 
-// Barang
-$sql = "SELECT * FROM barang";
-$hasil = mysqli_query($koneksi, $sql);
+if (isset($_POST["simpan"])) {
+    $NamaPelanggan = $_POST["namapelanggan"];
+    $telepon = $_POST["telepon"];
+    $alamat= $_POST["alamat"];
 
-echo "<table border=2px>
-        <thead>
-            <tr>
-            <th>
-               barang
-            </th>
-            <th>
-                harga
-            </th>
-            <th>
-                stok
-            </th>
-             </tr>
-        </thead>
-        <tbody>";
-while ($row = mysqli_fetch_array($hasil)){
-    echo "<tr>";
-    echo "<td>" . $row[1] . "<br>" . "</td>";
-    echo "<td>" . $row[2] . "<br>" . "</td>";
-    echo "<td>" . $row[3] . "<br>" . "</td>";
-    echo "</tr>";
+    $sql = "INSERT INTO pelanggan (NamaPelanggan, telepon, alamat) VALUES ('$NamaPelanggan', $telepon, '$alamat')";
+    $hasil =  mysqli_query($koneksi, $sql);
+
 }
-echo "</tbody> </table>";
 
-// Pelanggan
 $sql = "SELECT * FROM pelanggan";
 $hasil = mysqli_query($koneksi, $sql);
 
